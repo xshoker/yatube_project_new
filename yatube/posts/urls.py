@@ -6,6 +6,6 @@ from posts import views
 urlpatterns = [
     path('', views.index),
     path('group/', views.group),
-    path('group/<int:pk>/', 
+    path('group/<slug:pk>/', 
     views.group_posts),
 ]
