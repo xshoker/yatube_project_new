@@ -1,5 +1,7 @@
-<!-- templates/ice_cream/ice_cream_list.html --> 
-{% extends 'base.html' %}
-{% block content %}
-  {{ title }}
-{% endblock %}
+{% comment %}
+В HTML-тег <a> в атрибут href вместо адреса ссылки вставляем тег {% url %}
+и указываем name нужного path() 
+{% endcomment %}
+<a class="navbar-brand" href="{% url 'posts_list' %}">
+  Страница со списком постов
+</a>
