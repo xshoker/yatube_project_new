@@ -15,8 +15,19 @@ from django.template import loader
 
 
 def index(request):
+    # Адрес шаблона сохраним в переменную, это не обязательно, но удобно
     template = 'posts/index.html'
-    return render(request, template)
+    # Строку, которую надо вывести на страницу, тоже сохраним в переменную
+    title = 'Yatube для друзей'
+    # Словарь с данными принято называть context
+    context = {
+        # В словарь можно передать переменную
+        'title': title,
+        # А можно сразу записать значение в словарь. Но обычно так не делают
+        'text': 'Главная страница',
+    }
+    # Третьим параметром передаём словарь context
+    return render(request, template, context)
 
 # Страница со списком мороженого
 def group(request):
