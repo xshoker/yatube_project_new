@@ -9,12 +9,14 @@ from django.http import HttpResponse
 from django.http import HttpResponse
 
 # Главная страница
-def index(request):
-    html_content = '<html><head><title>Yatube</title></head><body>'
-    html_content += '<h1>Главная страница</h1>'
-    html_content += '</body></html>'    
-    return HttpResponse(html_content)
+from django.http import HttpResponse
+# Импортируем загрузчик.
+from django.template import loader
 
+
+def index(request):
+    template = 'posts/index.html'
+    return render(request, template)
 
 # Страница со списком мороженого
 def group(request):
