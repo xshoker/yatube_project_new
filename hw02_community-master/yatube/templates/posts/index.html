@@ -1,0 +1,8 @@
+<!-- templates/ice_cream/index.html --> 
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ title }}</h2>
+    <a class="navbar-brand" href="{% url 'posts:group' %}">
+        Список постов
+    </a>
+{% endblock %}
